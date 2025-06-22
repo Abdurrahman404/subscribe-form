@@ -1,0 +1,148 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Subtle animated gradient background */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  padding: 35px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  text-align: center;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Subtle fluid background inside container */
+  background: url(http://googleusercontent.com/image_generation_content/0);
+  background-size: cover;
+  opacity: 0.2;
+  pointer-events: none;
+  border-radius: 15px;
+}
+
+form input,
+form button {
+  width: calc(100% - 24px);
+  padding: 14px;
+  margin: 12px 0;
+  font-size: 17px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  /* Subtle glow effect on inputs */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2), 0 0 5px rgba(0, 0, 0, 0.2); /* Enhanced focus effect */
+}
+
+form button {
+  background-image: linear-gradient(45deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-image: linear-gradient(45deg, #0056b3 0%, #004085 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+form button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.2);
+}
+
+#a {
+  margin-top: 20px;
+  color: #28a745;
+  font-weight: 700;
+  font-size: 1.1em;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideInUp 0.6s ease-out forwards 0.5s;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .container {
+    padding: 25px 25px;
+    border-radius: 10px;
+  }
+
+  form input,
+  form button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
